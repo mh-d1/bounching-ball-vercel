@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Catch Game Pro</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#0b0b0f">
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- TOP BAR (MOBILE) -->
+<div class="topbar glass">
+  <span>Score: <b id="score">0</b></span>
+  <span>Lives: <b id="lives">3</b></span>
+  <span>Combo: <b id="combo">0</b></span>
+</div>
+
+<!-- DESKTOP LAYOUT -->
+<div class="container">
+
+  <!-- LEFT -->
+  <div class="side glass left">
+    <h3>PLAYER</h3>
+    <p id="player">Guest</p>
+
+    <hr>
+
+    <p>Score: <b id="scoreL">0</b></p>
+    <p>Best: <b id="best">0</b></p>
+    <p>Combo: <b id="comboL">0</b></p>
+    <p>Lives: <b id="livesL">3</b></p>
+
+    <small>Spotify Dark UI</small>
+  </div>
+
+  <!-- GAME -->
+  <div class="game glass" id="game"></div>
+
+  <!-- RIGHT -->
+  <div class="side glass right">
+    <h3>CONTROLS</h3>
+
+    <button onclick="left()">⬅ Left</button>
+    <button onclick="right()">Right ➡</button>
+    <button onclick="togglePause()">⏸ Pause</button>
+    <button onclick="restart()">🔁 Restart</button>
+
+    <hr>
+
+    <small>Desktop: Arrow Keys</small>
+  </div>
+
+</div>
+
+<!-- MOBILE BUTTONS -->
+<div class="mobile-controls">
+  <button onclick="left()">⬅</button>
+  <button onclick="right()">➡</button>
+  <button onclick="togglePause()">⏸</button>
+  <button onclick="restart()">🔁</button>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

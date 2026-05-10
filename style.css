@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system;
+}
+
+body {
+  background: #0b0b0f;
+  color: white;
+  overflow: hidden;
+}
+
+/* BACKGROUND */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, #1db95422, transparent),
+              radial-gradient(circle at 80% 80%, #3b82ff22, transparent);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* GLASS */
+.glass {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+}
+
+/* LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 100vh;
+  gap: 12px;
+  padding: 12px;
+}
+
+/* SIDE */
+.side {
+  padding: 14px;
+  z-index: 5;
+}
+
+/* GAME */
+.game {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  height: 100%;
+  z-index: 1;
+}
+
+/* PLAYER */
+.player {
+  position: absolute;
+  bottom: 20px;
+  width: 90px;
+  height: 18px;
+  background: #1db954;
+  border-radius: 20px;
+  box-shadow: 0 0 12px #1db954;
+}
+
+/* BALL */
+.ball {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #ff3b3b;
+  border-radius: 50%;
+}
+
+/* TOPBAR MOBILE */
+.topbar {
+  display: none;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* MOBILE BUTTONS */
+.mobile-controls {
+  position: fixed;
+  bottom: 12px;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mobile-controls button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+/* DESKTOP FIX */
+.left, .right {
+  overflow: auto;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .left, .right {
+    display: none;
+  }
+
+  .topbar {
+    display: flex;
+  }
+
+  .game {
+    height: 75vh;
+  }
+
+  .mobile-controls {
+    display: flex;
+  }
+}
